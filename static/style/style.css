@@ -1,0 +1,493 @@
+input:focus, button:focus {
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+
+body{
+    background-color: #FAFBFC;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.notations{
+    font-family: "Space Grotesk", sans-serif;
+    height: 35px;
+    color: #fff;
+
+}
+
+nav h1{
+    
+    color: #fff;
+}
+
+nav{
+    font-family: "Space Grotesk", sans-serif;
+    color: #fff;
+    background: linear-gradient(45deg, #03C9AA, #373B46);
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.nav-link{
+    position: relative;
+}
+
+.nav-link a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: .3s;
+}
+
+.nav-link a::after{
+    content:'';
+    position: absolute;
+    width: calc(100% - 10px); 
+    height: 2px;
+    bottom: 5px;
+    left: 5px;
+    background-color: #FF9900;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s;
+}
+
+.nav-link{
+    margin: 0 20px;
+    font-weight: 700;
+}
+
+.nav-link:hover a::after{
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+.nav-link.active a::after{
+    content:'';
+    position: absolute;
+    width: calc(100% - 10px); 
+    height: 2px;
+    bottom: 5px;
+    left: 5px;
+    background-color: #FF9900;
+    transform: scaleX(1);
+    transform-origin: bottom right;
+    transition: transform 0.3s;
+}
+
+.nav-link.active:hover a::after{
+    transform-origin: bottom right;
+    transform: scaleX(0);
+}
+
+
+.discount{
+    color:#FF9900;
+    position: absolute;
+    padding-right: 16px;
+    font-size: 1.15em;
+    right:-2em;
+    top: -0.75em;
+
+}
+
+.discount .value{
+    position: relative;
+    z-index: 99;
+}
+
+.discount::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* Цвет фона */
+    transform: skewX(-30deg);
+    transform-origin: top left;
+    z-index: 98;
+}
+
+
+.btn {
+    white-space: normal;
+    word-wrap: normal;
+    overflow: hidden;
+    transition: .5s;
+    border-radius: 0;
+}
+
+.btn-white{
+    color: #fff;
+    border-color: #fff;
+    border: none;
+}
+
+.btn-white:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+
+.btn-white-rotate:hover{
+    transform: rotate(90deg);
+}
+
+.nav-devider{
+    background-color: #fff;
+    width: 1px;
+    height: 40px;
+}
+
+.btn-border{
+    border: 1px #fff solid;
+}
+
+/* btn btn-white btn-border */
+
+
+
+
+/* BANNER */
+
+.banner{
+    min-height: 55vh;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.banner img{
+    max-width: 100%;
+}
+
+
+@media (min-width: 992px) {
+    .banner-image{
+        width: 50%;
+    }
+}
+
+
+.banner-background{
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+
+.banner-background svg{
+    margin-top: 3rem;
+}
+
+/* .banner-background span{
+    font-size: 5rem;
+    font-weight: 300;
+  -webkit-text-stroke: 1px rgba(179, 179, 179, 0.568); /* ширина и цвет обводки *
+  color: transparent; /* делаем текст прозрачным *
+  font-size: 50px; /* размер текста *
+  font-weight: bold; /* жирность текста *
+} */
+
+
+h3{
+    color: #373B46;
+    text-transform: uppercase;
+}
+
+h2{
+    text-transform: uppercase;
+    color: #FF9900;
+    position: relative;
+    font-size: 1.5em;
+    font-weight: 700;
+    left: 3rem;
+}
+
+h2.text-sm{
+    font-size: 1em;
+    left: 2rem;
+
+}
+
+h2.text-sm::before{
+    font-size: 1em;
+    width: 33px; /* Ширина изображения */
+    height: 10px; /* Высота изображения */
+    left: -2rem; /* Регулируйте эти значения для позиционирования */
+
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    top: .55em; /* Регулируйте эти значения для позиционирования */
+    left: -3rem; /* Регулируйте эти значения для позиционирования */
+    transform: translateY(-50%); /* Центрирует изображение относительно h2 по вертикали */
+    width: 46px; /* Ширина изображения */
+    height: 16px; /* Высота изображения */
+    background-image: url('../img/prefix.svg'); 
+    background-size: contain; /* Масштабирует изображение, чтобы оно заполнило контейнер */
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 8px; /* Добавляет отступ между изображением и текстом h2 */
+}
+
+@media (max-width: 768px) {
+    h2{
+        font-size: .9em;
+    }
+    h2::before{
+        width: 28px; /* Ширина изображения */
+        height: 13px; /* Высота изображения */
+    }
+
+    .search h3{
+        font-size: 1em;
+    }
+
+    .price-block span{
+        font-size: 1.2em!important;
+    }
+    .price-block sup{
+        font-size: .5em;
+    }
+    .price-block sub{
+        font-size: .5em;
+    }
+}
+
+.breadcrumbs{
+    list-style: none;
+    font-weight: 500;
+    color: #999999;
+}
+.breadcrumbs li{
+    position: relative;
+    padding: 0 1em;
+}
+.breadcrumbs li:nth-last-child(1){
+    color: #373B46;
+}
+
+.slider-rail{
+    height: 100%;
+}
+
+.nav-slider, .report-section{
+    background-color: #fff;
+    border: #DDDDDD 1px solid;
+}
+
+
+.nav-slider{
+
+    border-radius: 5px 0 0 5px;
+}
+.nav-slider ul{
+    list-style: none;
+    color: #373B46;
+    padding-left: 0;
+}
+
+.nav-slider li{
+    padding: 12px 10px;
+    color: #373B46;
+}
+
+
+
+.nav-slider li.active{
+    color: #03C9AA;
+    border: 1px solid #03C9AA;
+}
+
+
+.breadcrumbs li::before{
+    content: '/';
+    position: absolute;
+    left: 0px;
+}
+
+
+.breadcrumbs li:nth-child(1)::before{
+    content: '';
+}
+
+
+h1{
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #373B46;
+}
+
+input, button{
+    border: none;
+}
+
+.pl-0{
+    padding-left: 0;
+}
+
+h1 span{
+    color: #FF9900;
+}
+
+.banner-colored{
+    background: linear-gradient(45deg, #03C9AA, #373B46);
+    min-height: 33vh;
+}
+
+.price-block {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    position: relative;
+}
+
+.price-block sup{
+    color: #fff;
+    height: 100%;
+    top: 1em;
+}
+
+
+.price-block span{
+    color: #FF9900;
+    font-size: 2.5em;
+    font-weight: 500;
+
+}
+
+.price-block sub{
+    color: #fff;
+    bottom: 1em;
+}
+
+
+  
+.btn-ripple{
+    position: relative;
+}
+.btn-ripple::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -110%; /* Начальная позиция полосы - за пределами кнопки */
+    width: 35px;
+    height: 100%;
+    background: rgba(255, 255, 255,1); /* Светящаяся полоса с прозрачностью */
+    transform: skewX(-20deg); /* Наклон полосы */
+    transition: left 1s; /* Плавное перемещение полосы */
+}
+  
+.btn-ripple:hover::after {
+    left: 110%; /* Конечная позиция полосы - с другой стороны кнопки */
+}
+
+.btn-secondary-border{
+    color: #373B46;
+    border: #373B46 1px solid;
+}
+
+
+.btn-secondary-border:hover{
+    background-color: #373B46;
+    color: #fff;
+}
+
+
+.btn-primary-border{
+    color: #FF9900;
+    border: #FF9900 1px solid;
+}
+
+.btn-primary-border:hover{
+    background-color: #FF9900;
+    color: #fff;
+}
+
+.btn-md, .input-md{
+    min-height: 50px;
+}
+
+
+.search-details > div{
+    display: flex;
+    align-items: center;
+}
+
+.search-details span{
+    padding-left: 1rem;
+}
+
+
+.search{
+    overflow: hidden;
+    position: relative;
+}
+
+.search .container *{
+    z-index: 3;
+}
+
+
+.search .banner-background{
+    right: 0;
+    z-index: 2;
+
+}
+
+.text-secondary{
+    color: #999999!important;
+}
+
+.devider-block{
+    width: 100%;
+    min-height: 30px;
+    overflow: hidden;
+}
+
+.devider-block{
+    background-color: #373B46;
+    color: #ffffff;
+}
+
+.make {
+    font-size: 1.15em;
+}
+.make .model {
+    font-size: .75em;
+}
+
+
+.card hr{
+    margin-right: 20px !important;
+    margin-left: 20px !important;
+}
+
+.specifications .col-12 {
+    margin-top: 5px;
+    font-size: 1.15em;
+}
+
+footer{
+    background: linear-gradient(45deg, #03C9AA, #373B46);
+}
+
+
+hr{
+    background-color: #fff;
+    opacity: .75;
+}
+
+h3{
+    font-weight: 700;
+}
