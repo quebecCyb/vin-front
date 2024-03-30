@@ -491,3 +491,45 @@ hr{
 h3{
     font-weight: 700;
 }
+
+.spec{
+    padding: 10px 30px;
+    font-weight: 400;
+    color: #373B46;
+}
+
+.spec span:nth-child(1){
+    color: #999999;
+}
+
+.hor-devider{
+    height: 1px;
+    background-color: #999999;
+    opacity: .5;
+    margin: 0 20px;
+}
+
+.attn-section {
+    border-radius: 8px;
+    border: #DDDDDD 1px solid;
+    box-shadow: 1px 1px 10px #1a202c32;
+}
+
+.attn-section.active{
+    border: #03C9AA 1px solid;
+    color: #03C9AA;
+    font-size: .9em;
+}
+
+.report-title-section{
+    background-color: #373B46;
+    border-radius: 3px;
+}
+
+.report-title-section h5{
+    font-size: 1.4em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    margin-left: 15px;
+}
